@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ext01d1840.expert.xtAnaSayfa">
+    tools:context="com.example.ext01d1840.expert.xtTaskAtama">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Ana sayfa" />
+        android:text="task atama" />
 
 </FrameLayout>

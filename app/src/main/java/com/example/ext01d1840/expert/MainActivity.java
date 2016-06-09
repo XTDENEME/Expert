@@ -1,5 +1,6 @@
 package com.example.ext01d1840.expert;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,7 +17,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, xtAnaSayfa.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+                   xtAnaSayfa.OnFragmentInteractionListener,
+                   xtUrunCozum.OnFragmentInteractionListener ,
+                   xtKariyer.OnFragmentInteractionListener,
+                   xtIletisim.OnFragmentInteractionListener,
+                   xtBekleyenIsler.OnFragmentInteractionListener,
+                   xtCalisanBilgileri.OnFragmentInteractionListener,
+                   xtTaskAtama.OnFragmentInteractionListener,
+                   xtTakibimdekiIsler.OnFragmentInteractionListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +46,7 @@ public class MainActivity extends AppCompatActivity
 
         xtAnaSayfa anasayfaFragment = new xtAnaSayfa();
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.relativelayout_for_fragment,
-                anasayfaFragment,
-                anasayfaFragment.getTag()).commit();
+        manager.beginTransaction().replace(R.id.relativelayout_for_fragment,anasayfaFragment,anasayfaFragment.getTag()).commit();
     }
 
     @Override
@@ -82,30 +90,71 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.itAnaSayfa) {
             // Handle the camera action
 
-            xtAnaSayfa cameraFragment = new xtAnaSayfa();
+            xtAnaSayfa anaSayfa = new xtAnaSayfa();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,
-                    cameraFragment,
-                    cameraFragment.getTag()).commit();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,anaSayfa,anaSayfa.getTag()).commit();
 
         } else if (id == R.id.itSistemeGiris) {
 
+            Intent sistemGiris = new Intent(this,xtSistemeGiris.class);
+            startActivity(sistemGiris);
+
         } else if (id == R.id.itKariyer) {
+
+            xtKariyer kariyerFıirsatlari = new xtKariyer();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,kariyerFıirsatlari,kariyerFıirsatlari.getTag()).commit();
 
         } else if (id == R.id.itUrunCozum) {
 
+            xtUrunCozum urunCozum = new xtUrunCozum();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,urunCozum,urunCozum.getTag()).commit();
+
         } else if (id == R.id.itWebSayfası){
 
+            Uri uri = Uri.parse("https://www.experteam.com.tr/");       //experteam websitesine yönlendirilecektir.
+            Intent web = new Intent(Intent.ACTION_VIEW,uri);
+            startActivity(web);
+
         } else if (id == R.id.itIletisim){
+
+            xtIletisim iletisim = new xtIletisim();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,iletisim,iletisim.getTag()).commit();
 
         }
         else if (id == R.id.itCalisanBilgileri) {
 
+            xtCalisanBilgileri calisanBilgileri = new xtCalisanBilgileri();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,calisanBilgileri,calisanBilgileri.getTag()).commit();
+
         } else if (id == R.id.itBekleyenIsler) {
+
+            xtBekleyenIsler bekleyenIsler = new xtBekleyenIsler();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,bekleyenIsler,bekleyenIsler.getTag()).commit();
 
         }else if (id == R.id.itTaskAtama) {
 
+            xtTaskAtama taskAtama = new xtTaskAtama();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,taskAtama,taskAtama.getTag()).commit();
+
         }else if (id == R.id.itTakibimdekiIsler) {
+
+            xtTakibimdekiIsler takibimdekiIsler = new xtTakibimdekiIsler();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,takibimdekiIsler,takibimdekiIsler.getTag()).commit();
+
+        }else if(id == R.id.itTelefon){
+
+            Uri uri = Uri.parse("tel:+90 216 427 41 41");
+            Intent tel = new Intent(Intent.ACTION_DIAL,uri);
+            startActivity(tel);
+
+        }else if (id == R.id.itPaylas){
 
         }
 
