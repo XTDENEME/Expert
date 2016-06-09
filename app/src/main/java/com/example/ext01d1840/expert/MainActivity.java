@@ -155,7 +155,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(tel);
 
         }else if (id == R.id.itPaylas){
-
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND); //Share intentini oluşturuyoruz
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "EXPERTEAM");//share mesaj konusu
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "https://www.experteam.com.tr/");//share mesaj içeriği
+            startActivity(Intent.createChooser(sharingIntent, "Paylaşmak İçin Seçiniz"));//Share intentini başlığı ile birlikte başlatıyoruz
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
