@@ -1,0 +1,41 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 131088 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=792, tid=30008
+#
+# JRE version: 6.0_29-b11
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.4-b02 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000006878000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=30008, stack(0x0000000006c20000,0x0000000006d20000)]
+
+Stack: [0x0000000006c20000,0x0000000006d20000]
+
+Current CompileTask:
+C2:   1820 161      com.android.dx.ssa.Dominators.run()V (506 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000006a1e800 JavaThread "pool-2-thread-4" [_thread_in_Java, id=30700, stack(0x0000000007820000,0x0000000007920000)]
+  0x000000000710d800 JavaThread "pool-2-thread-3" [_thread_in_vm, id=29772, stack(0x0000000007720000,0x0000000007820000)]
+  0x0000000007277800 JavaThread "pool-2-thread-2" [_thread_in_Java, id=27788, stack(0x0000000007620000,0x0000000007720000)]
+  0x0000000007276800 JavaThread "pool-3-thread-1" [_thread_blocked, id=29744, stack(0x0000000007520000,0x0000000007620000)]
+  0x0000000006965800 JavaThread "pool-2-thread-1" [_thread_blocked, id=29964, stack(0x0000000007420000,0x0000000007520000)]
+  0x0000000006885000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=29904, stack(0x0000000006e20000,0x0000000006f20000)]

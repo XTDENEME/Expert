@@ -7,6 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.amigold.fundapter.BindDictionary;
+import com.amigold.fundapter.FunDapter;
+import com.amigold.fundapter.extractors.StringExtractor;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 /**
@@ -63,8 +74,80 @@ public class xtAnaSayfa extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_xt_ana_sayfa, container, false);
+
+       View view = inflater.inflate(R.layout.fragment_xt_ana_sayfa, container, false);
+
+        final ArrayList<xtHaber> xthaber =new ArrayList<xtHaber>();
+        xtHaber p1 = new xtHaber("Coke",10,10);
+        xtHaber p2 = new xtHaber("Pepsi",10,10);
+        xtHaber p3 = new xtHaber("Gazoz",10,10);
+        xtHaber p4 = new xtHaber("MSuyu",10,10);
+        xtHaber p5 = new xtHaber("Ayran",10,10);
+        xtHaber p6 = new xtHaber("Şalgam",10,10);
+        xtHaber p7 = new xtHaber("Coke",10,10);
+        xtHaber p8 = new xtHaber("Pepsi",10,10);
+        xtHaber p9 = new xtHaber("Gazoz",10,10);
+        xtHaber p10 = new xtHaber("MSuyu",10,10);
+        xtHaber p11 = new xtHaber("Ayran",10,10);
+        xtHaber p12 = new xtHaber("Şalgam",10,10);
+
+        xthaber.add(p1);
+        xthaber.add(p2);
+        xthaber.add(p3);
+        xthaber.add(p4);
+        xthaber.add(p5);
+        xthaber.add(p6);
+        xthaber.add(p7);
+        xthaber.add(p8);
+        xthaber.add(p9);
+        xthaber.add(p10);
+        xthaber.add(p11);
+        xthaber.add(p12);
+
+        BindDictionary<xtHaber> dictionary = new BindDictionary<xtHaber>();
+        dictionary.addStringField(R.id.tvName, new StringExtractor<xtHaber>() {
+            @Override
+            public String getStringValue(xtHaber xtHaber, int position) {
+                return xtHaber.getName();
+            }
+        });
+
+        dictionary.addStringField(R.id.tvAdet, new StringExtractor<xtHaber>() {
+            @Override
+            public String getStringValue(xtHaber xtHaber, int position) {
+                return ""+xtHaber.getQty();
+            }
+        });
+
+        dictionary.addStringField(R.id.tvTutar, new StringExtractor<xtHaber>() {
+            @Override
+            public String getStringValue(xtHaber xtHaber, int position) {
+                return ""+xtHaber.getPrice();
+            }
+        });
+
+
+       // ArrayAdapter<xtHaber> adapter=new ArrayAdapter<xtHaber>(xtAnaSayfa.this.getActivity(),android.R.layout.simple_list_item_1,xthaber);
+        FunDapter adapter = new FunDapter(xtAnaSayfa.this.getActivity(),xthaber,R.layout.xthaber_ana,dictionary);
+
+
+        ListView listView = (ListView)view.findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                xtHaber selectedProduct = xthaber.get(position);
+                Toast.makeText(xtAnaSayfa.this.getActivity(),selectedProduct.getName(),Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+       return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
