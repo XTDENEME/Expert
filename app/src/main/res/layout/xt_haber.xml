@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundGravity="left">
+=======
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+>>>>>>> origin/master
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:id="@+id/haberImage"
+<<<<<<< HEAD
         android:layout_marginTop="10dp"
         android:scaleType="fitXY" />
+=======
+        android:layout_gravity="center_horizontal" />
+>>>>>>> origin/master
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:id="@+id/haberText"
         android:layout_below="@+id/haberImage"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
+=======
+        android:id="@+id/haberText" />
+</LinearLayout>
+>>>>>>> origin/master
