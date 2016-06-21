@@ -4,8 +4,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_xt_sisteme_giris">Sign in</string>
@@ -22,4 +20,26 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="hello_world">Hello world</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="header_titles">
+        <item>Kişi Bilgileri</item>
+        <item>İzin Bilgileri</item>
+        <item>Eğitim Bilgisi</item>
+    </string-array>
+    <string-array name="h1_items">
+        <item>Kişisel Bilgiler</item>
+        <item>CV</item>
+        <item>Ekip Bilgisi</item>
+    </string-array>
+    <string-array name="h2_items">
+        <item>dene11</item>
+    </string-array>
+    <string-array name="h3_items">
+        <item>dene111</item>
+    </string-array>
+
+
 </resources>
