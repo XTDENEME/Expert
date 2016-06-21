@@ -8,6 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.EditText;
+import android.widget.ExpandableListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import android.view.LayoutInflater;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,23 +36,20 @@ public class xtCalisanBilgileri extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
     private OnFragmentInteractionListener mListener;
 
     public xtCalisanBilgileri() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment xtCalisanBilgileri.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static xtCalisanBilgileri newInstance(String param1, String param2) {
+
         xtCalisanBilgileri fragment = new xtCalisanBilgileri();
+
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -53,6 +59,8 @@ public class xtCalisanBilgileri extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -64,7 +72,54 @@ public class xtCalisanBilgileri extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_xt_calisan_bilgileri, container, false);
+        View view =  inflater.inflate(R.layout.fragment_xt_calisan_bilgileri, container, false);
+        View vchild = inflater.inflate(R.layout.xt_child_layout, container, false);
+
+        ExpandableListView expandableListView = (ExpandableListView) view.findViewById(R.id.exp_listview);
+
+        List<String> Headings = new ArrayList<String>();
+        List<String> L1 = new ArrayList<String>();
+        List<String> L2 = new ArrayList<String>();
+        List<String> L3 = new ArrayList<String>();
+
+        HashMap<String,List<String>> ChildList = new HashMap<String, List<String>>();
+        String heading_items[] = getResources().getStringArray(R.array.header_titles);
+        String l1[]=getResources().getStringArray(R.array.h1_items);
+        String l2[]=getResources().getStringArray(R.array.h2_items);
+        String l3[]=getResources().getStringArray(R.array.h3_items);
+
+        for (String title : heading_items)
+        {
+            Headings.add(title);
+        }
+
+        for (String title : l1)
+        {
+            L1.add(title);
+        }
+
+        for (String title : l2)
+        {
+            //L2.add(title);
+            String txtEgAd ="İzin Bilgileri";
+            L2.add(""+txtEgAd);
+        }
+
+        for (String title : l3)
+        {
+
+            String txtEgAd ="Eğitim Adı";
+            L3.add(""+txtEgAd);
+        }
+
+        ChildList.put(Headings.get(0),L1);
+        ChildList.put(Headings.get(1),L2);
+        ChildList.put(Headings.get(2),L3);
+
+        xtAdapter myAdapter = new xtAdapter(xtCalisanBilgileri.this.getActivity(),Headings,ChildList);
+        expandableListView.setAdapter(myAdapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -91,16 +146,7 @@ public class xtCalisanBilgileri extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
