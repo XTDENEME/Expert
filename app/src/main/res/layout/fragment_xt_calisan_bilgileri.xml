@@ -5,9 +5,12 @@
     tools:context="com.example.ext01d1840.expert.xtCalisanBilgileri">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ExpandableListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Çalışan Bilgileri" />
+        android:id="@+id/exp_listview">
+
+    </ExpandableListView>
 
 </FrameLayout>
