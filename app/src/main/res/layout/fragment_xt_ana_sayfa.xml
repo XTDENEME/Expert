@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scaleType="fitXY"
-    tools:context="com.example.ext01d1840.expert.xtAnaSayfa">
+    tools:context="com.example.ext01d1840.expert.xtAnaSayfa"
+    android:background="@color/arkarenk">
 
 
     <ListView

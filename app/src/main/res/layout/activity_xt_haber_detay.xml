@@ -11,18 +11,28 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/arkarenk">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="0dp">
+            android:layout_margin="0dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/arkarenk"
+                android:id="@+id/imageView" />
 
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="180dp"
                 android:id="@+id/hdImage"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:id="@+id/tvBaslik"

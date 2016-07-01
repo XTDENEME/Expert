@@ -4,27 +4,28 @@
     <group android:id="@+id/aaa">
         <item
             android:id="@+id/itAnaSayfa"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/anasayfaaa"
             android:title="Ana Sayfa" />
         <item
             android:id="@+id/itSistemeGiris"
-            android:icon="@android:drawable/button_onoff_indicator_on"
-            android:title="Sisteme Giriş" />
+            android:icon="@drawable/sistem"
+            android:title="Sisteme Giriş"
+            />
         <item
             android:id="@+id/itUrunCozum"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/urunler"
             android:title="Ürünler ve Çözümler" />
         <item
             android:id="@+id/itKariyer"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/kariyer"
             android:title="Kariyer Fırsatları" />
         <item
             android:id="@+id/itWebSayfası"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/websayfasi"
             android:title="Web Sayfası" />
         <item
             android:id="@+id/itIletisim"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/bizeulasin"
             android:title="Bize Ulaşın" />
 
     </group>
@@ -33,30 +34,30 @@
 
         <item
             android:id="@+id/itCalisanBilgileri"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/calisanbilgileri"
             android:title="Çalışan Bilgileri" />
         <item
             android:id="@+id/itBekleyenIsler"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/bekleyenisler"
             android:title="Bekleyen İşler" />
         <item
             android:id="@+id/itTakibimdekiIsler"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/takibimdekiisler"
             android:title="Takibimdeki İşler" />
         <item
             android:id="@+id/itTaskAtama"
-            android:icon="@android:drawable/button_onoff_indicator_on"
+            android:icon="@drawable/taskatama"
             android:title="Task Atama" />
     </group>
 
     <group android:id="@+id/bbb">
         <item
             android:id="@+id/itTelefon"
-            android:icon="@android:drawable/ic_menu_call"
+            android:icon="@drawable/telefon"
             android:title="Şirket Telefon" />
         <item
             android:id="@+id/itPaylas"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/paylas"
             android:title="Paylaş" />
     </group>
 

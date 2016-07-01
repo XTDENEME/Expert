@@ -11,6 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.ext01d1840.expert.MainActivity"
     tools:showIn="@layout/app_bar_main"
-    android:id="@+id/relativelayout_for_fragment">
+    android:id="@+id/relativelayout_for_fragment"
+    android:background="@color/arkarenk">
 
 </RelativeLayout>
