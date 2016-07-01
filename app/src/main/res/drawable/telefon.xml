@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="33.000000dp"
+    android:height="33.000000dp"
+    android:viewportWidth="33.000000"
+    android:viewportHeight="33.000000">
+
+    <group
+            android:translateY="33.000000"
+            android:scaleX="0.100000"
+            android:scaleY="-0.100000">
+        <path
+            android:fillColor="#000000"
+            android:strokeWidth="1"
+            android:pathData="M25 307 c-23 -20 -26 -27 -20 -60 15 -78 147 -215 229 -238 41 -11 69 -1 87 32 9
+17 7 26 -9 48 -16 22 -27 26 -66 26 -43 0 -51 4 -92 47 -41 44 -44 50 -38 86 5 34
+3 42 -21 60 -34 27 -38 27 -70 -1z m60 -17 c15 -16 16 -25 7 -44 -12 -28 6 -63 59
+-112 50 -46 68 -54 96 -41 20 9 28 7 45 -11 21 -21 21 -22 3 -42 -24 -27 -43 -25
+-96 9 -58 37 -115 94 -150 150 -33 52 -35 67 -12 93 20 23 26 23 48 -2z" />
+        <path
+            android:fillColor="#000000"
+            android:strokeWidth="1"
+            android:pathData="M156 321 c-5 -7 3 -11 19 -11 68 0 135 -64 135 -129 0 -21 4 -30 11 -25 15 9 4 78
+-18 110 -27 42 -132 81 -147 55z" />
+        <path
+            android:fillColor="#000000"
+            android:strokeWidth="1"
+            android:pathData="M160 260 c0 -5 10 -10 23 -10 29 0 67 -39 67 -68 0 -12 5 -22 10 -22 6 0 10 13 10
+29 0 20 -9 37 -31 55 -30 26 -79 35 -79 16z" />
+    </group>
+</vector>
