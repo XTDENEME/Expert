@@ -4,7 +4,7 @@
     <group android:id="@+id/aaa">
         <item
             android:id="@+id/itAnaSayfa"
-            android:icon="@drawable/anasayfaaa"
+            android:icon="@drawable/anaysayfa"
             android:title="Ana Sayfa" />
         <item
             android:id="@+id/itSistemeGiris"
