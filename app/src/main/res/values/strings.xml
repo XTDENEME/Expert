@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Experteam</string>
+
+    <string name="dev_name"></string>
+
+    <string name="gev_name"></string>
+
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
