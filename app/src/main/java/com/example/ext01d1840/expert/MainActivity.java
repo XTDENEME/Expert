@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+
+
         int id = item.getItemId();
 
         if (id == R.id.itAnaSayfa) {
@@ -93,6 +96,7 @@ public class MainActivity extends AppCompatActivity
             xtAnaSayfa anaSayfa = new xtAnaSayfa();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.relativelayout_for_fragment,anaSayfa,anaSayfa.getTag()).commit();
+
 
         } else if (id == R.id.itSistemeGiris) {
 
