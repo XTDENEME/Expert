@@ -1,0 +1,119 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 65552 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=12280, tid=11004
+#
+# JRE version: 6.0_29-b11
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.4-b02 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000648d800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=11004, stack(0x0000000006930000,0x0000000006a30000)]
+
+Stack: [0x0000000006930000,0x0000000006a30000]
+
+Current CompileTask:
+C2:   2333  84      sun.security.provider.SHA.implCompress([BI)V (491 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000006499000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=6216, stack(0x0000000006a30000,0x0000000006b30000)]
+=>0x000000000648d800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=11004, stack(0x0000000006930000,0x0000000006a30000)]
+  0x0000000006488800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=12316, stack(0x0000000006830000,0x0000000006930000)]
+  0x0000000006485000 JavaThread "Attach Listener" daemon [_thread_blocked, id=16060, stack(0x0000000006730000,0x0000000006830000)]
+  0x0000000006480000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=12788, stack(0x0000000006630000,0x0000000006730000)]
+  0x0000000000528800 JavaThread "Finalizer" daemon [_thread_blocked, id=11172, stack(0x0000000006330000,0x0000000006430000)]
+  0x0000000000527000 JavaThread "Reference Handler" daemon [_thread_blocked, id=12332, stack(0x0000000006230000,0x0000000006330000)]
+  0x000000000028c000 JavaThread "main" [_thread_in_native, id=10640, stack(0x0000000002320000,0x0000000002420000)]
+
+Other Threads:
+  0x0000000000521000 VMThread [stack: 0x0000000006130000,0x0000000006230000] [id=7360]
+  0x00000000064a2000 WatcherThread [stack: 0x0000000006b30000,0x0000000006c30000] [id=15880]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 37760K, used 16223K [0x00000000eaab0000, 0x00000000ed4d0000, 0x0000000100000000)
+  eden space 32384K, 50% used [0x00000000eaab0000,0x00000000eba87e60,0x00000000eca50000)
+  from space 5376K, 0% used [0x00000000ecf90000,0x00000000ecf90000,0x00000000ed4d0000)
+  to   space 5376K, 0% used [0x00000000eca50000,0x00000000eca50000,0x00000000ecf90000)
+ PSOldGen        total 86336K, used 0K [0x00000000c0000000, 0x00000000c5450000, 0x00000000eaab0000)
+  object space 86336K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c5450000)
+ PSPermGen       total 21248K, used 6600K [0x00000000bae00000, 0x00000000bc2c0000, 0x00000000c0000000)
+  object space 21248K, 31% used [0x00000000bae00000,0x00000000bb4723e8,0x00000000bc2c0000)
+
+Code Cache  [0x0000000002420000, 0x0000000002690000, 0x0000000005420000)
+ total_blobs=301 nmethods=86 adapters=168 free_code_cache=49762112 largest_free_block=7872
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042e000 	C:\Program Files\Java\jdk1.6.0_29\bin\java.exe
+0x00000000771e0000 - 0x000000007738a000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076fc0000 - 0x00000000770df000 	C:\Windows\system32\kernel32.dll
+0x000007fefd460000 - 0x000007fefd4ca000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefd7c0000 - 0x000007fefd89b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefdb90000 - 0x000007fefdc2f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd4f0000 - 0x000007fefd50f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007feff280000 - 0x000007feff3ad000 	C:\Windows\system32\RPCRT4.dll
+0x0000000068000000 - 0x0000000068058000 	C:\Windows\System32\QIPCAP64.dll
+0x000007fefdfa0000 - 0x000007fefed2c000 	C:\Windows\system32\SHELL32.dll
+0x000007fefef40000 - 0x000007fefefb1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefdce0000 - 0x000007fefdd47000 	C:\Windows\system32\GDI32.dll
+0x00000000770e0000 - 0x00000000771da000 	C:\Windows\system32\USER32.dll
+0x000007fefdc50000 - 0x000007fefdc5e000 	C:\Windows\system32\LPK.dll
+0x000007fefd980000 - 0x000007fefda4a000 	C:\Windows\system32\USP10.dll
+0x000007fefc680000 - 0x000007fefc6db000 	C:\Windows\system32\DNSAPI.dll
+0x000007fefd770000 - 0x000007fefd7bd000 	C:\Windows\system32\WS2_32.dll
+0x000007fefdf90000 - 0x000007fefdf98000 	C:\Windows\system32\NSI.dll
+0x000007fefda50000 - 0x000007fefda7e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefda80000 - 0x000007fefdb89000 	C:\Windows\system32\MSCTF.dll
+0x000000006d890000 - 0x000000006e048000 	C:\Program Files\Java\jdk1.6.0_29\jre\bin\server\jvm.dll
+0x000007fefb270000 - 0x000007fefb2ab000 	C:\Windows\system32\WINMM.dll
+0x000000006d800000 - 0x000000006d80e000 	C:\Program Files\Java\jdk1.6.0_29\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\Program Files\Java\jdk1.6.0_29\jre\bin\java.dll
+0x000000006d850000 - 0x000000006d862000 	C:\Program Files\Java\jdk1.6.0_29\jre\bin\zip.dll
+0x00000000773a0000 - 0x00000000773a7000 	C:\Windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Xmx1024M -Dfile.encoding=windows-1254 -Duser.country=US -Duser.language=en -Duser.variant 
+java_command: com.android.dx.command.Main --dex --force-jumbo --num-threads=4 --multi-dex --output C:\Users\ext0132016\AndroidStudioProjects\Expert\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_e463ffce212190ad7816adc53dc25e9a37d12ea5 C:\Users\ext0132016\AndroidStudioProjects\Expert\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\OraHome_1\jre\1.4.2\bin\client;C:\OraHome_1\jre\1.4.2\bin;C:\OracleATS\oxe\app\oracle\product\10.2.0\server\bin;c:\oracle\BIToolsHome_1\bin;c:\oracle\BIToolsHome_1\jlib;c:\oracle\BIToolsHome_1\jre\1.4.2\bin\client;c:\oracle\BIToolsHome_1\jre\1.4.2\bin;c:\DevSuiteHome_1\jdk\jre\bin\classic;c:\DevSuiteHome_1\jdk\jre\bin;c:\DevSuiteHome_1\jdk\jre\bin\client;c:\DevSuiteHome_1\jlib;c:\DevSuiteHome_1\bin;c:\DevSuiteHome_1\jre\1.4.2\bin\client;c:\DevSuiteHome_1\jre\1.4.2\bin;c:\app\Administrator\product\11.2.0\client_1;C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\binaries\php\php_runningversion;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\TortoiseSVN\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;d:\Git\cmd;C:\Users\Administrator\AppData\Roaming\npm
+USERNAME=EXT0132016
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8283248k(1105560k free), swap 12475692k(10948k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.4-b02) for windows-amd64 JRE (1.6.0_29-b11), built on Oct  3 2011 01:06:42 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Wed Jul 13 10:25:00 2016
+elapsed time: 2 seconds
+
