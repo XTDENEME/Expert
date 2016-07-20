@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity
                    xtBekleyenIsler.OnFragmentInteractionListener,
                    xtCalisanBilgileri.OnFragmentInteractionListener,
                    xtTaskAtama.OnFragmentInteractionListener,
-                   xtTakibimdekiIsler.OnFragmentInteractionListener
+                   xtTakibimdekiIsler.OnFragmentInteractionListener,
+                    xtSisLogin.OnFragmentInteractionListener
 {
 
     @Override
@@ -100,8 +101,12 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.itSistemeGiris) {
 
-            Intent sistemGiris = new Intent(this,xtSistemeGiris.class);
-            startActivity(sistemGiris);
+            xtSisLogin sisLogin = new xtSisLogin();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,sisLogin,sisLogin.getTag()).commit();
+
+            /*Intent sistemGiris = new Intent(this,xtSistemeGiris.class);
+            startActivity(sistemGiris);*/
 
         } else if (id == R.id.itKariyer) {
 
