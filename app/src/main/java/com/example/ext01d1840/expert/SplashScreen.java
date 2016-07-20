@@ -40,7 +40,7 @@ public class SplashScreen extends ActionBarActivity{
         Thread zamanlayıcı = new Thread(){
             public void run(){
                 try {
-                    sleep(1000);
+                    sleep(3000);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                     Log.i("tago","zamanlayici calismadi");
