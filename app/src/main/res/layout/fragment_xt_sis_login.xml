@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ext01d1840.expert.xtSisLogin"
+    android:background="@drawable/experteamlogin">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:text="Kullanıcı Adı"
+        android:gravity="fill"
+        android:drawablePadding="10dp"
+        android:id="@+id/etLoginUser"
+        android:layout_marginTop="-100dp"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/kullanici_girisi"
+        android:autoText="false"
+        android:background="#ffffff"
+        android:textColor="@color/abc_color_highlight_material"
+        android:focusableInTouchMode="true"
+        android:descendantFocusability="beforeDescendants" />
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:id="@+id/etSifre"
+        android:text="Şifre"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/sifre"
+        android:layout_marginTop="-30dp"
+        android:gravity="fill"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        android:textColor="@color/abc_color_highlight_material" />
+
+    <Button
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:text="Giriş"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:id="@+id/btnGiris"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="#556f7b"
+        android:textColor="#ffffff"/>
+
+</FrameLayout>
