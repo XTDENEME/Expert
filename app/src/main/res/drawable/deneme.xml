@@ -3,76 +3,73 @@
     android:oneshot="false"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-      android:drawable="@drawable/v01"
-      android:duration="0"></item>
 
-    <!--    <item
-          android:drawable="@drawable/v02"
+        <item
+          android:drawable="@drawable/girisekrani"
           android:duration="0"></item>
 
-        <item
-         android:drawable="@drawable/v03"
-         android:duration="0"></item>
-
-        <item
-         android:drawable="@drawable/v04"
-         android:duration="0"></item>
-
-         <item
-         android:drawable="@drawable/v05"
-         android:duration="0"></item>
-
-        <item
-         android:drawable="@drawable/v06"
-         android:duration="0"></item>
-
-           <item
-             android:drawable="@drawable/v07"
+    <!--        <item
+             android:drawable="@drawable/v03"
              android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v08"
+            <item
+             android:drawable="@drawable/v04"
              android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v01"
+             <item
+             android:drawable="@drawable/v05"
              android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v12"
+            <item
+             android:drawable="@drawable/v06"
              android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v01"
-             android:duration="0"></item>
+               <item
+                 android:drawable="@drawable/v07"
+                 android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v12"
-             android:duration="0"></item>
+               <item
+                 android:drawable="@drawable/v08"
+                 android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v01"
-             android:duration="0"></item>
+               <item
+                 android:drawable="@drawable/v01"
+                 android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v12"
-             android:duration="0"></item>
+               <item
+                 android:drawable="@drawable/v12"
+                 android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v01"
-             android:duration="0"></item>
+               <item
+                 android:drawable="@drawable/v01"
+                 android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v12"
-             android:duration="0"></item>
-           <item
-             android:drawable="@drawable/v01"
-             android:duration="0"></item>
+               <item
+                 android:drawable="@drawable/v12"
+                 android:duration="0"></item>
 
-           <item
-             android:drawable="@drawable/v12"
-             android:duration="0"></item>-->
+               <item
+                 android:drawable="@drawable/v01"
+                 android:duration="0"></item>
+
+               <item
+                 android:drawable="@drawable/v12"
+                 android:duration="0"></item>
+
+               <item
+                 android:drawable="@drawable/v01"
+                 android:duration="0"></item>
+
+               <item
+                 android:drawable="@drawable/v12"
+                 android:duration="0"></item>
+               <item
+                 android:drawable="@drawable/v01"
+                 android:duration="0"></item>
+
+               <item
+                 android:drawable="@drawable/v12"
+                 android:duration="0"></item>-->
 
 
 </animation-list>
