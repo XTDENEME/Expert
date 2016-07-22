@@ -14,10 +14,7 @@ import android.widget.EditText;
 public class xtSisLogin extends Fragment
  {
 
-     /* aytulyesil*/
 
-        EditText userEt;
-     /*-------------*/
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,7 +49,7 @@ public class xtSisLogin extends Fragment
         }
 
 
-        userEt =(EditText) userEt.findViewById(R.id.etLoginUser);
+        //userEt =(EditText) userEt.findViewById(R.id.etLoginUser);
 
     }
 
@@ -94,9 +91,9 @@ public class xtSisLogin extends Fragment
         void onFragmentInteraction(Uri uri);
     }
 
-     public void userEtOnClick(View v) {
-         userEt.setText("");
-     }
+     //public void userEtOnClick(View v) {
+       //  userEt.setText("");
+     //}
 
 
 }
