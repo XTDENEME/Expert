@@ -12,8 +12,28 @@
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
     <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/activity_main_drawer"
+        app:headerLayout="@layout/nav_header_main"
+        android:orientation="vertical"
+        android:background="#e3e7eb" />
+
+</android.support.v4.widget.DrawerLayout>
+
+    <!-- android:longClickable="false"
+         android:foregroundGravity="clip_horizontal|clip_vertical
+         android:layout_marginTop="@dimen/nav_header_height"
+         app:headerLayout="@layout/nav_header_main"
+         android:layout_marginTop ="80dp"
+
+
+     -->
+  <!--  <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -22,9 +42,11 @@
         android:layout_marginTop="80dp"
         android:paddingStart="@dimen/fab_margin"
         app:menu="@menu/activity_main_drawer"
+
         android:minHeight="0dp"
         android:longClickable="false"
         android:foregroundGravity="clip_horizontal|clip_vertical"
-        android:background="#e3e7eb" />
+        android:background="#e3e7eb" />-->
 
-</android.support.v4.widget.DrawerLayout>
+
+
