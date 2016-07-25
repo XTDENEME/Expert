@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ext01d1840.expert.xtBekleyenIsler"
+
     android:background="@color/arkarenk">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,3 +13,5 @@
         android:text="Bekleyen İşler" />
 
 </FrameLayout>
+
+<!--tools:showIn="@layout/app_bar_main1"-->
