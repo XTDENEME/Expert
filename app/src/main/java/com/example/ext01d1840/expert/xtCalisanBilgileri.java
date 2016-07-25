@@ -1,5 +1,6 @@
 package com.example.ext01d1840.expert;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -44,6 +45,7 @@ public class xtCalisanBilgileri extends Fragment {
         // Required empty public constructor
     }
 
+    Activity titleChange;
 
     // TODO: Rename and change types and number of parameters
     public static xtCalisanBilgileri newInstance(String param1, String param2) {
@@ -134,6 +136,8 @@ public class xtCalisanBilgileri extends Fragment {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
+
+
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -151,4 +155,6 @@ public class xtCalisanBilgileri extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

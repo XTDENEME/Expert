@@ -1,7 +1,9 @@
 package com.example.ext01d1840.expert;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,18 +31,13 @@ public class xtBekleyenIsler extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    Activity titleChange;
+
     public xtBekleyenIsler() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment xtBekleyenIsler.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static xtBekleyenIsler newInstance(String param1, String param2) {
         xtBekleyenIsler fragment = new xtBekleyenIsler();
@@ -64,8 +61,12 @@ public class xtBekleyenIsler extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        titleChange.setTitle("Bekleyen İşler");
         return inflater.inflate(R.layout.fragment_xt_bekleyen_isler, container, false);
     }
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -83,7 +84,16 @@ public class xtBekleyenIsler extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+
+
     }
+   @Override
+   public void onAttach(Activity activity) {
+       super.onAttach(activity);
+
+       titleChange = (MainActivity) activity;
+   }
+
 
     @Override
     public void onDetach() {
@@ -91,18 +101,12 @@ public class xtBekleyenIsler extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+
 }

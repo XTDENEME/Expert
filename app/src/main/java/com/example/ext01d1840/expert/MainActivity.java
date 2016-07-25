@@ -1,6 +1,7 @@
 package com.example.ext01d1840.expert;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -26,8 +28,10 @@ public class MainActivity extends AppCompatActivity
                    xtCalisanBilgileri.OnFragmentInteractionListener,
                    xtTaskAtama.OnFragmentInteractionListener,
                    xtTakibimdekiIsler.OnFragmentInteractionListener,
-                    xtSisLogin.OnFragmentInteractionListener
+                   xtSisLogin.OnFragmentInteractionListener
 {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +51,23 @@ public class MainActivity extends AppCompatActivity
 
         xtAnaSayfa anasayfaFragment = new xtAnaSayfa();
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.relativelayout_for_fragment,anasayfaFragment,anasayfaFragment.getTag()).commit();
+        //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,anasayfaFragment,anasayfaFragment.getTag()).commit();
+        android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.relativelayout_for_fragment, anasayfaFragment).addToBackStack("anasayfa").commit();
+
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+
+        if(count!=0) {
+            FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+            if (backStackEntry.getName().contains("anasayfa")) {
+                getSupportFragmentManager().popBackStack();
+            }
+        }
+
     }
 
-    @Override
+   /* @Override   Aşağıdaki kod ile değiştirildi.
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -58,7 +75,19 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
+   @Override
+   public void onBackPressed() {
+
+       // fragment sayısı bir ise uygulamadan çıkıyor
+       if(getSupportFragmentManager().getBackStackEntryCount() != 1)
+           super.onBackPressed();
+
+       else {
+           finish();
+           System.exit(0);
+       }
+   }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -69,9 +98,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -92,18 +119,51 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.itAnaSayfa) {
-            // Handle the camera action
 
             xtAnaSayfa anaSayfa = new xtAnaSayfa();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,anaSayfa,anaSayfa.getTag()).commit();
+           // manager.beginTransaction().replace(R.id.relativelayout_for_fragment,anaSayfa,anaSayfa.getTag()).commit();  Aşağıdaki iki satır ile değiştirildi
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, anaSayfa).addToBackStack("anasayfa").commit();
+
+            //app bar üzerindeki başlığı değiştiriyoruz.
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("anasayfa")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
 
         } else if (id == R.id.itSistemeGiris) {
 
             xtSisLogin sisLogin = new xtSisLogin();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,sisLogin,sisLogin.getTag()).commit();
+           // manager.beginTransaction().replace(R.id.relativelayout_for_fragment,sisLogin,sisLogin.getTag()).commit(); Aşağıdaki iki satır ile değiştirildi
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, sisLogin).addToBackStack("login").commit();
+            //app bar üzerindeki başlığı değiştiriyoruz.
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("login")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
             /*Intent sistemGiris = new Intent(this,xtSistemeGiris.class);
             startActivity(sistemGiris);*/
@@ -112,13 +172,47 @@ public class MainActivity extends AppCompatActivity
 
             xtKariyer kariyerFıirsatlari = new xtKariyer();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,kariyerFıirsatlari,kariyerFıirsatlari.getTag()).commit();
+           // manager.beginTransaction().replace(R.id.relativelayout_for_fragment,kariyerFıirsatlari,kariyerFıirsatlari.getTag()).commit();
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, kariyerFıirsatlari).addToBackStack("kariyer").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("kariyer")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         } else if (id == R.id.itUrunCozum) {
 
             xtUrunCozum urunCozum = new xtUrunCozum();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,urunCozum,urunCozum.getTag()).commit();
+            //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,urunCozum,urunCozum.getTag()).commit();
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, urunCozum).addToBackStack("urun").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("urun")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         } else if (id == R.id.itWebSayfası){
 
@@ -126,36 +220,128 @@ public class MainActivity extends AppCompatActivity
             Intent web = new Intent(Intent.ACTION_VIEW,uri);
             startActivity(web);
 
+
+
         } else if (id == R.id.itIletisim){
 
             xtIletisim iletisim = new xtIletisim();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,iletisim,iletisim.getTag()).commit();
+            //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,iletisim,iletisim.getTag()).commit();
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, iletisim).addToBackStack("iletisim").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("iletisim")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         }
         else if (id == R.id.itCalisanBilgileri) {
 
             xtCalisanBilgileri calisanBilgileri = new xtCalisanBilgileri();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,calisanBilgileri,calisanBilgileri.getTag()).commit();
+            //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,calisanBilgileri,calisanBilgileri.getTag()).commit();
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, calisanBilgileri).addToBackStack("calisan").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("calisan")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         } else if (id == R.id.itBekleyenIsler) {
 
             xtBekleyenIsler bekleyenIsler = new xtBekleyenIsler();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,bekleyenIsler,bekleyenIsler.getTag()).commit();
+           // manager.beginTransaction().replace(R.id.relativelayout_for_fragment,bekleyenIsler,bekleyenIsler.getTag()).commit();
+
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, bekleyenIsler).addToBackStack("bekleyen").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("bekleyen")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         }else if (id == R.id.itTaskAtama) {
 
             xtTaskAtama taskAtama = new xtTaskAtama();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,taskAtama,taskAtama.getTag()).commit();
+            //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,taskAtama,taskAtama.getTag()).commit();
+
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, taskAtama).addToBackStack("task").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("task")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         }else if (id == R.id.itTakibimdekiIsler) {
 
             xtTakibimdekiIsler takibimdekiIsler = new xtTakibimdekiIsler();
             FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.relativelayout_for_fragment,takibimdekiIsler,takibimdekiIsler.getTag()).commit();
+            //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,takibimdekiIsler,takibimdekiIsler.getTag()).commit();
+
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, takibimdekiIsler).addToBackStack("takibim").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("takibim")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         }else if(id == R.id.itTelefon){
 
@@ -163,12 +349,16 @@ public class MainActivity extends AppCompatActivity
             Intent tel = new Intent(Intent.ACTION_DIAL,uri);
             startActivity(tel);
 
+
+
         }else if (id == R.id.itPaylas){
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND); //Share intentini oluşturuyoruz
             sharingIntent.setType("text/plain");
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "EXPERTEAM");//share mesaj konusu
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "https://www.experteam.com.tr/");//share mesaj içeriği
             startActivity(Intent.createChooser(sharingIntent, "Paylaşmak İçin Seçiniz"));//Share intentini başlığı ile birlikte başlatıyoruz
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -180,4 +370,7 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
+
 }
