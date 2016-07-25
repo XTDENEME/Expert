@@ -1,6 +1,5 @@
 package com.example.ext01d1840.expert;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -85,7 +84,6 @@ public class xtAnaSayfa extends Fragment {
     }
     // TODO: Rename and change types and number of parameters
 
-    Activity titleChange;
 
     public static xtAnaSayfa newInstance(String param1, String param2) {
 
@@ -116,7 +114,12 @@ public class xtAnaSayfa extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
+        /*ayesil
+        GlobalVariable global = (GlobalVariable)getActivity().getApplication();
+        boolean loginstatus;
+        loginstatus = global.getCheckLogin();
+        Toast.makeText(getContext(),"login status : "+global.toString(),Toast.LENGTH_SHORT).show();
+        ayesil*/
 
        View rootView = inflater.inflate(R.layout.fragment_xt_ana_sayfa, container, false);
 
@@ -153,7 +156,7 @@ public class xtAnaSayfa extends Fragment {
         }
     }
 
-  /*  @Override
+    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
@@ -164,7 +167,7 @@ public class xtAnaSayfa extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }*/
+    }
 
     @Override
     public void onDetach() {
@@ -175,13 +178,6 @@ public class xtAnaSayfa extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
 
     }
 }

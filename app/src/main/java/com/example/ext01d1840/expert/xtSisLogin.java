@@ -78,8 +78,7 @@ public class xtSisLogin extends Fragment
                 user.setTextColor(Color.parseColor("#556f7b"));
 
             }
-    });
-
+        });
 
         password.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,16 +90,6 @@ public class xtSisLogin extends Fragment
             }
         });
 
-        /*
-        user.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-
-                user.getText().clear();
-                user.setTextColor(Color.parseColor("#556f7b"));
-            }
-        });
-        */
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +102,12 @@ public class xtSisLogin extends Fragment
                     if (password.getText().toString().equals("welcome")){
 
                         Toast.makeText(getContext(),"Hoşgeldin",Toast.LENGTH_SHORT).show();
+
+                        /*ayesil sistem login bilgisi set edilir*/
+                        GlobalVariable global = (GlobalVariable)getActivity().getApplication();
+                        global.setCheckLogin(true);
+                        /*ayesil*/
+
                         Intent main = new Intent(getContext(),MainActivity.class);
                         startActivity(main);
 
