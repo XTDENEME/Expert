@@ -6,12 +6,8 @@
         <item
             android:id="@+id/itAnaSayfa"
             android:icon="@drawable/anaysayfa"
-            android:title="Ana Sayfa" />
-        <item
-            android:id="@+id/itSistemeGiris"
-            android:icon="@drawable/sistem"
-            android:title="Sisteme Giriş"
-            />
+            android:title="Haberler" />
+
         <item
             android:id="@+id/itUrunCozum"
             android:icon="@drawable/urunler"
@@ -20,18 +16,17 @@
             android:id="@+id/itKariyer"
             android:icon="@drawable/kariyer"
             android:title="Kariyer Fırsatları" />
-        <item
-            android:id="@+id/itWebSayfası"
-            android:icon="@drawable/websayfasi"
-            android:title="Web Sayfası" />
-        <item
-            android:id="@+id/itIletisim"
-            android:icon="@drawable/bizeulasin"
-            android:title="Bize Ulaşın" />
+
 
     </group>
 
     <group android:id="@+id/zzz">
+
+        <item
+            android:id="@+id/itSistemeGiris"
+            android:icon="@drawable/sistem"
+            android:title="Sisteme Giriş"
+            />
 
         <item
             android:id="@+id/itCalisanBilgileri"
@@ -52,6 +47,15 @@
     </group>
 
     <group android:id="@+id/bbb">
+
+        <item
+            android:id="@+id/itWebSayfası"
+            android:icon="@drawable/websayfasi"
+            android:title="Web Sayfası" />
+        <item
+            android:id="@+id/itIletisim"
+            android:icon="@drawable/bizeulasin"
+            android:title="Bize Ulaşın" />
         <item
             android:id="@+id/itTelefon"
             android:icon="@drawable/telefon"
