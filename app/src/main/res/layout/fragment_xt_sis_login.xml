@@ -6,32 +6,57 @@
     android:background="@drawable/experteamlogin">
 
     <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#556f7b"
+        android:layout_marginTop="-115dp"
+        android:layout_marginLeft="-100dp"
+        android:layout_gravity="center"
+        android:text="Kullanıcı Adı"
+        android:id="@+id/tvUser"/>
+
+
     <EditText
         android:layout_width="320dp"
         android:layout_height="45dp"
-        android:text="Kullanıcı Adı"
         android:gravity="fill"
         android:drawablePadding="10dp"
         android:id="@+id/etLoginUser"
-        android:layout_marginTop="-100dp"
+        android:layout_marginTop="-80dp"
         android:layout_gravity="center"
         android:drawableLeft="@drawable/kullanici_girisi"
         android:autoText="false"
         android:background="#ffffff"
-        android:textColor="@color/abc_color_highlight_material" />
+        android:textColor="#556f7b" />
 
     <EditText
         android:layout_width="320dp"
         android:layout_height="45dp"
         android:id="@+id/etSifre"
-        android:text="Şifre"
         android:drawablePadding="10dp"
         android:drawableLeft="@drawable/sifre"
-        android:layout_marginTop="-30dp"
+        android:layout_marginTop="0dp"
         android:gravity="fill"
         android:layout_gravity="center"
         android:background="#ffffff"
-        android:textColor="@color/abc_color_highlight_material" />
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="#556f7b" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Şifre"
+        android:id="@+id/tvPass"
+        android:textSize="20sp"
+        android:textColor="#556f7b"
+        android:layout_marginTop="-35dp"
+        android:layout_marginLeft="-135dp"
+        android:layout_gravity="center" />
 
     <Button
         android:layout_width="320dp"
@@ -41,8 +66,10 @@
         android:textAllCaps="false"
         android:id="@+id/btnGiris"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:background="#556f7b"
         android:textColor="#ffffff"/>
+
+
 
 </FrameLayout>
