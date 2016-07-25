@@ -6,7 +6,6 @@
     android:background="@drawable/experteamlogin">
 
     <!-- TODO: Update blank fragment layout -->
-
     <EditText
         android:layout_width="320dp"
         android:layout_height="45dp"
@@ -19,9 +18,7 @@
         android:drawableLeft="@drawable/kullanici_girisi"
         android:autoText="false"
         android:background="#ffffff"
-        android:textColor="@color/abc_color_highlight_material"
-        android:focusableInTouchMode="true"
-        android:descendantFocusability="beforeDescendants" />
+        android:textColor="@color/abc_color_highlight_material" />
 
     <EditText
         android:layout_width="320dp"
