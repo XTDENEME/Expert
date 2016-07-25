@@ -47,5 +47,9 @@
         <item>dene111</item>
     </string-array>
 
+    <array name="icons">
+        <item name="facebook">@drawable/experteamarkaalan</item>
+        <item name="twitter">@drawable/experteamnew1</item>
+    </array>
 
 </resources>
