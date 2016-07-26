@@ -69,11 +69,19 @@ public class xtCalisanBilgileri extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        titleChange = (MainActivity) activity;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        titleChange.setTitle("Çalışan Bilgileri");
         View view =  inflater.inflate(R.layout.fragment_xt_calisan_bilgileri, container, false);
         View vchild = inflater.inflate(R.layout.xt_child_layout, container, false);
 

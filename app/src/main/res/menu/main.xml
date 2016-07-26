@@ -6,4 +6,10 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+
+    <item android:title="Çıkış"
+        android:id="@+id/settingLogin"
+        android:orderInCategory="100"
+        />
 </menu>

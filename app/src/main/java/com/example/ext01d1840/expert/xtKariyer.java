@@ -1,5 +1,6 @@
 package com.example.ext01d1840.expert;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class xtKariyer extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Activity titleChange;
 
     private OnFragmentInteractionListener mListener;
 
@@ -50,6 +52,12 @@ public class xtKariyer extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        titleChange = (MainActivity) activity;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +72,7 @@ public class xtKariyer extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        titleChange.setTitle("Kariyer Fırsatları");
         return inflater.inflate(R.layout.fragment_xt_kariyer, container, false);
     }
 

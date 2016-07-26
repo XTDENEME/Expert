@@ -1,5 +1,6 @@
 package com.example.ext01d1840.expert;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -29,6 +30,7 @@ public class xtSisLogin extends Fragment
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+     Activity titleChange;
     private OnFragmentInteractionListener mListener;
 
     public xtSisLogin() {
@@ -45,6 +47,7 @@ public class xtSisLogin extends Fragment
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,11 +61,18 @@ public class xtSisLogin extends Fragment
 
     }
 
+     @Override
+     public void onAttach(Activity activity) {
+         super.onAttach(activity);
+
+         titleChange = (MainActivity) activity;
+     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        titleChange.setTitle("Sisteme Giriş");
         View view =  inflater.inflate(R.layout.fragment_xt_sis_login, container, false);
 
         final EditText user = (EditText) view.findViewById(R.id.etLoginUser);

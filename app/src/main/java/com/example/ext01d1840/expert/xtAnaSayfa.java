@@ -1,5 +1,6 @@
 package com.example.ext01d1840.expert;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -40,6 +41,7 @@ public class xtAnaSayfa extends Fragment {
     private String mParam2;
     private OnFragmentInteractionListener mListener;
 
+    Activity titleChange;
     String p_haber;
     String p_detay;
     int p_image;
@@ -111,17 +113,18 @@ public class xtAnaSayfa extends Fragment {
     }
 
     @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        titleChange = (MainActivity) activity;
+    }
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        /*ayesil
-        GlobalVariable global = (GlobalVariable)getActivity().getApplication();
-        boolean loginstatus;
-        loginstatus = global.getCheckLogin();
-        Toast.makeText(getContext(),"login status : "+global.toString(),Toast.LENGTH_SHORT).show();
-        ayesil*/
+        titleChange.setTitle("Haberler");
 
-       View rootView = inflater.inflate(R.layout.fragment_xt_ana_sayfa, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_xt_ana_sayfa, container, false);
 
         lv = (ListView) rootView.findViewById(R.id.anaView);
         haberAdaptor adapter=new haberAdaptor(getActivity(),haberT,haberI);

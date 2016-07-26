@@ -18,4 +18,8 @@ public class GlobalVariable extends Application {
 
         this.checkLogin = checkLogin;
     }
+
+
+
+
 }
