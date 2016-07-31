@@ -244,11 +244,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.itKariyer) {
 
-            xtKariyer kariyerFıirsatlari = new xtKariyer();
+            xtKariyer kariyerFirsatlari = new xtKariyer();
             FragmentManager manager = getSupportFragmentManager();
            // manager.beginTransaction().replace(R.id.relativelayout_for_fragment,kariyerFıirsatlari,kariyerFıirsatlari.getTag()).commit();
             android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
-            transaction.replace(R.id.relativelayout_for_fragment, kariyerFıirsatlari).addToBackStack("kariyer").commit();
+            transaction.replace(R.id.relativelayout_for_fragment, kariyerFirsatlari).addToBackStack("kariyer").commit();
 
             item.setChecked(true);
             getSupportActionBar().setTitle(item.getTitle());
