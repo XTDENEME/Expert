@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity
                    xtCalisanBilgileri.OnFragmentInteractionListener,
                    xtTaskAtama.OnFragmentInteractionListener,
                    xtTakibimdekiIsler.OnFragmentInteractionListener,
-                   xtSisLogin.OnFragmentInteractionListener
+                   xtSisLogin.OnFragmentInteractionListener,
+                   xtCozum.OnFragmentInteractionListener,
+                   xtUrunler.OnFragmentInteractionListener
 {
 
 
@@ -288,7 +290,55 @@ public class MainActivity extends AppCompatActivity
                 }
             }
 
-        } else if (id == R.id.itWebSayfası){
+        }else if (id == R.id.itCozum) {
+
+        xtCozum cozum = new xtCozum();
+        FragmentManager manager = getSupportFragmentManager();
+        //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,urunCozum,urunCozum.getTag()).commit();
+        android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.relativelayout_for_fragment, cozum).addToBackStack("cozum").commit();
+
+        item.setChecked(true);
+        getSupportActionBar().setTitle(item.getTitle());
+
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+
+        if (count != 0) {
+        // Son fragment alınıyor
+        FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+        // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+        if (backStackEntry.getName().contains("cozum")) {
+        getSupportFragmentManager().popBackStack();
+        }
+        }
+
+        }else if (id == R.id.itUrun) {
+
+        xtUrunler urun = new xtUrunler();
+        FragmentManager manager = getSupportFragmentManager();
+        //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,urunCozum,urunCozum.getTag()).commit();
+        android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.relativelayout_for_fragment, urun).addToBackStack("urun").commit();
+
+        item.setChecked(true);
+        getSupportActionBar().setTitle(item.getTitle());
+
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+
+        if (count != 0) {
+        // Son fragment alınıyor
+        FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+        // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+        if (backStackEntry.getName().contains("urun")) {
+        getSupportFragmentManager().popBackStack();
+        }
+        }
+
+        }
+
+        else if (id == R.id.itWebSayfası){
 
             Uri uri = Uri.parse("https://www.experteam.com.tr/");       //experteam websitesine yönlendirilecektir.
             Intent web = new Intent(Intent.ACTION_VIEW,uri);
