@@ -11,7 +11,18 @@
         <item
             android:id="@+id/itUrunCozum"
             android:icon="@drawable/urunler"
-            android:title="Ürünler ve Çözümler" />
+            android:title="Hizmetler" />
+
+        <item
+            android:id="@+id/itCozum"
+            android:icon="@drawable/urunler"
+            android:title="Çözümler" />
+
+        <item
+            android:id="@+id/itUrun"
+            android:icon="@drawable/urunler"
+            android:title="XT Ürünleri" />
+
         <item
             android:id="@+id/itKariyer"
             android:icon="@drawable/kariyer"
