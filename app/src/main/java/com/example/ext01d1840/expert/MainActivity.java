@@ -1,18 +1,10 @@
 package com.example.ext01d1840.expert;
 
-import android.app.Activity;
-import android.content.ClipData;
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,8 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -35,7 +25,9 @@ public class MainActivity extends AppCompatActivity
                    xtTakibimdekiIsler.OnFragmentInteractionListener,
                    xtSisLogin.OnFragmentInteractionListener,
                    xtCozum.OnFragmentInteractionListener,
-                   xtUrunler.OnFragmentInteractionListener
+                   xtUrunler.OnFragmentInteractionListener,
+                   xtServisim.OnFragmentInteractionListener,
+                   xtRehber.OnFragmentInteractionListener
 {
 
 
@@ -482,6 +474,54 @@ public class MainActivity extends AppCompatActivity
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "https://www.experteam.com.tr/");//share mesaj içeriği
             startActivity(Intent.createChooser(sharingIntent, "Paylaşmak İçin Seçiniz"));//Share intentini başlığı ile birlikte başlatıyoruz
 
+
+        }else if (id == R.id.itServisim) {
+
+            xtServisim servisim = new xtServisim();
+            FragmentManager manager = getSupportFragmentManager();
+            //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,takibimdekiIsler,takibimdekiIsler.getTag()).commit();
+
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, servisim).addToBackStack("Servisim").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("Servisim")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
+
+        }else if (id == R.id.itRehber) {
+
+            xtRehber rehber = new xtRehber();
+            FragmentManager manager = getSupportFragmentManager();
+            //manager.beginTransaction().replace(R.id.relativelayout_for_fragment,takibimdekiIsler,takibimdekiIsler.getTag()).commit();
+
+            android.support.v4.app.FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.relativelayout_for_fragment, rehber).addToBackStack("Rehber").commit();
+
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
+
+            int count = getSupportFragmentManager().getBackStackEntryCount();
+
+            if(count!=0) {
+                // Son fragment alınıyor
+                FragmentManager.BackStackEntry backStackEntry = getSupportFragmentManager().getBackStackEntryAt(count - 1);
+
+                // Son fragment ile seçilen fragment aynı ise eski fragment siliniyor
+                if (backStackEntry.getName().contains("Rehber")) {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
 
         }
 
