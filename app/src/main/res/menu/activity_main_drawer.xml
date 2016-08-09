@@ -55,6 +55,14 @@
             android:id="@+id/itTaskAtama"
             android:icon="@drawable/taskatama"
             android:title="Task Atama" />
+        <item
+            android:id="@+id/itServisim"
+            android:icon="@drawable/taskatama"
+            android:title="Servisim" />
+        <item
+            android:id="@+id/itRehber"
+            android:icon="@drawable/taskatama"
+            android:title="Rehber" />
     </group>
 
     <group android:id="@+id/bbb">
