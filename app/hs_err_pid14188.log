@@ -1,0 +1,40 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 46416 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=14188, tid=22684
+#
+# JRE version: 6.0_29-b11
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.4-b02 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000006927000):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=22684, stack(0x0000000006dc0000,0x0000000006ec0000)]
+
+Stack: [0x0000000006dc0000,0x0000000006ec0000]
+
+Current CompileTask:
+C2:    559   3      java.lang.String.replace(CC)Ljava/lang/String; (142 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000006928800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=23904, stack(0x0000000006ec0000,0x0000000006fc0000)]
+=>0x0000000006927000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=22684, stack(0x0000000006dc0000,0x0000000006ec0000)]
+  0x0000000006918000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=17988, stack(0x0000000006cc0000,0x0000000006dc0000)]
+  0x0000000006914800 JavaThread "Attach Listener" daemon [_thread_blocked, id=24480, stack(0x0000000006bc0000,0x0000000006cc0000)]
+  0x000000000690f800 JavaThread "Signal Dispatcher"
