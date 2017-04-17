@@ -21,7 +21,7 @@
         <item
             android:id="@+id/itUrun"
             android:icon="@drawable/urunler"
-            android:title="XT Ürünleri" />
+            android:title="Patika Ürünleri" />
 
         <item
             android:id="@+id/itKariyer"
